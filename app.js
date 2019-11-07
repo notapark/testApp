@@ -43,4 +43,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.set('port', process.env.PORT || 80);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('서버가 ' + server.address().port + ' 포트에서 실행중!!!');
+});
+
 module.exports = app;
